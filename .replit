@@ -1,0 +1,19 @@
+modules = ["python-3.12", "python-base-3.13", "python-base-3.12"]
+run = "python app.py"
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "python app.py"]
+
+[[ports]]
+localPort = 2000
+externalPort = 3000
+
+[[ports]]
+localPort = 3000
+externalPort = 3001
+
+[[ports]]
+localPort = 5000
+externalPort = 80
